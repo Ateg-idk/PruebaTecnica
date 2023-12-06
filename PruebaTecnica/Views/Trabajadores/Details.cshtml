@@ -1,0 +1,61 @@
+﻿@model PruebaTecnica.Models.Trabajadore
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+
+<div>
+    <h4>Trabajador</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.TipoDocumento)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.TipoDocumento)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.NumeroDocumento)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.NumeroDocumento)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Nombres)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Nombres)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Sexo)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Sexo)
+        </dd>
+        <dt class = "col-sm-2">
+            Departamento
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.IdDepartamentoNavigation.NombreDepartamento)
+        </dd>
+     
+        <dt class = "col-sm-2">
+            Provincia
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.IdProvinciaNavigation.NombreProvincia)
+        </dd>
+           <dt class = "col-sm-2">
+            Distrito
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.IdDistritoNavigation.NombreDistrito)
+        </dd>
+
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.Id" class="btn btn-primary">Editar</a> |
+    <a asp-action="Index" class="btn btn-danger">Volver</a>
+</div>

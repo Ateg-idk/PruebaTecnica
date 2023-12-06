@@ -1,0 +1,64 @@
+﻿    @model PruebaTecnica.Models.Trabajadore
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h1>Eliminar</h1>
+
+<h3>¿Estás seguro de que quieres eliminar esto?</h3>
+<div>
+    <h4>Trabajadore</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.TipoDocumento)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.TipoDocumento)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.NumeroDocumento)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.NumeroDocumento)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Nombres)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Nombres)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Sexo)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Sexo)
+        </dd>
+        <dt class = "col-sm-2">
+            Departamento
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.IdDepartamentoNavigation.NombreDepartamento)
+        </dd>
+     
+        <dt class = "col-sm-2">
+            Provincia
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.IdProvinciaNavigation.NombreProvincia)
+        </dd>
+           <dt class = "col-sm-2">
+            Distrito
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.IdDistritoNavigation.NombreDistrito)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="Id" />
+        <input type="submit" value="Eliminar" class="btn btn-danger" /> |
+        <a asp-action="Index" class="btn btn-primary">Volver</a>
+    </form>
+</div>
